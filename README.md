@@ -26,7 +26,7 @@ Follow these steps to set up and run the Smart Home Automation System on your lo
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/smart-home-automation.git
+   git clone https://github.com/rason-developer/HSmart
    ```
 
 2. Install dependencies:
