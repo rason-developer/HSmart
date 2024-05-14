@@ -26,7 +26,7 @@ Follow these steps to set up and run the Smart Home Automation System on your lo
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/smart-home-automation.git
+   git clone https://github.com/rason-developer/HSmart
    ```
 
 2. Install dependencies:
@@ -77,7 +77,11 @@ Follow these steps to run tests for the Smart Home Automation System:
    ```bash
    npm run test:e2e
    ```
-
+5. To freely test the websockets server:
+ ```bash
+npm install -g wscat
+wscat -c ws://localhost:4455
+```
 ## Contributing
 
 Contributions are welcome! Feel free to open issues or submit pull requests for any improvements or bug fixes.
