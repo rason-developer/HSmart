@@ -38,7 +38,7 @@ Follow these steps to set up and run the Smart Home Automation System on your lo
 
 3. Set up environment variables:
 
-   Create a `.env` file in the root directory and configure environment variables such as database connection URL, JWT secret, etc.
+   Create a `.env` file in the root directory and configure environment variables such as database connection URL, JWT secret,PORT, etc.
 
 4. Start the server:
 
@@ -48,7 +48,7 @@ Follow these steps to set up and run the Smart Home Automation System on your lo
 
 5. Access the application:
 
-   Open your web browser and navigate to `http://localhost:3000` to access the Smart Home Automation System.
+   Open your web browser and navigate to `http://localhost:port` to access the Smart Home Automation System.
 
 ## Testing
 

@@ -4,8 +4,9 @@ import morgan from 'morgan';
 import http from "http";
 import router from  "./routes";
 import WebSocket from 'ws';
+import dotenv from 'dotenv';
 
-
+dotenv.config();
 
 const isValidJSON = (str:any) => {
     try {
@@ -23,10 +24,12 @@ const app = express();
 app.use(cors());
 app.use(morgan('tiny'));
 
+const port = process.env.PORT || 4455;
+
 const server = http.createServer(app);
 
-server.listen(4455, () => {
-    console.log("Server Running on http://localhost:4455/");
+server.listen(port, () => {
+    console.log(`Server Running on http://localhost:${port}/`);
 });
 
 const wss = new WebSocket.Server({server:server});
