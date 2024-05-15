@@ -5,6 +5,7 @@ import http from "http";
 import router from  "./routes";
 import WebSocket from 'ws';
 import dotenv from 'dotenv';
+import mongoose from 'mongoose';
 
 dotenv.config();
 
@@ -23,6 +24,7 @@ const app = express();
 
 app.use(cors());
 app.use(morgan('tiny'));
+app.use(express.json());
 
 const port = process.env.PORT || 4455;
 
@@ -67,5 +69,10 @@ wss.on('connection', function connection(ws) {
     });
 });
 
+mongoose.Promise = Promise;
+mongoose.connect(process.env.MONGOOSE_URL);
+mongoose.connection.on("error", (error:Error) => {
+    console.log(error);
+});
 
 app.use('/', router());
