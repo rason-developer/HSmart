@@ -6,7 +6,7 @@ export default(router:express.Router) => {
     router.get("/devices", devices_get);
     router.post("/devices", devices_post);
     router.get("/devices/:id", single_device_get);
-    router.put("/devices/",device_put);
+    router.put("/devices/:id",device_put);
     router.delete("/devices/:id", device_delete);
 }
 
