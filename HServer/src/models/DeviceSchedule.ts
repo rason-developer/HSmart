@@ -6,6 +6,8 @@ interface ISchedule extends Document {
     actionType : string,
     timingDetails: StorageManager,
     eventsID: ObjectId,
+    date: Date,
+    userID: ObjectId
 };
 
 
@@ -25,11 +27,19 @@ const scheduleSchema = new Schema<ISchedule>({
     eventsID:{
         type: mongoose.Types.ObjectId,
         required:true
+    },
+    date: {
+        type:Date,
+        required:true,
+    },
+    userID:{
+        type: mongoose.Types.ObjectId,
+        required:true,
     }
 
 });
 
 
-const Schedule = mongoose.model<ISchedule>("Schedule", scheduleSchema);
+const DeviceSchedule = mongoose.model<ISchedule>("Schedule", scheduleSchema);
 
-export default Schedule;
+export default DeviceSchedule;
