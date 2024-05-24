@@ -10,7 +10,7 @@ const JWT_SECRET_KEY = JWT_SECRET;
 
 export const register = async (req: express.Request, res: express.Response) => {
     try {
-        const { username, email, password } = req.body;
+        const { username, email, password, isAdmin } = req.body;
         if (!username || !email || !password) {
             return res.status(400).send("Missing information...");
         }
@@ -19,6 +19,7 @@ export const register = async (req: express.Request, res: express.Response) => {
             username,
             email,
             passwordHash: password,
+            roles: isAdmin ? ['user', 'admin'] : ['user'], // Set roles based on isAdmin flag
         });
 
         const savedUser = await newUser.save();
